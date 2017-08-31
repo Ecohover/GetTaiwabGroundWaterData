@@ -1,0 +1,27 @@
+﻿<Window x:Class="GetData.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="地下水水位擷取工具" Height="444.333" Width="475">
+    <Grid>
+        <Button x:Name="btnRun" Content="Run" HorizontalAlignment="Left" Margin="352,345,0,0" VerticalAlignment="Top" Width="75" Click="btnRun_Click"/>
+        <ComboBox x:Name="cBBasin" HorizontalAlignment="Left" Margin="106,17,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cBBasin_SelectionChanged"
+          ItemsSource="{Binding objBasin.Basin}"
+          DisplayMemberPath="Value"
+          SelectedValuePath="Key" 
+          SelectedValue="{Binding Path=Conf:ConfProperties.Title}"/>
+        <ComboBox x:Name="cBST" HorizontalAlignment="Left" Margin="106,48,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cBST_SelectionChanged"/>
+        <ListBox x:Name="lBYear" HorizontalAlignment="Left" Height="262" Margin="46,105,0,0" VerticalAlignment="Top" Width="120" SelectionMode="Multiple"/>
+        <ListBox x:Name="lBGetData" HorizontalAlignment="Left" Height="262" Margin="212,105,0,0" VerticalAlignment="Top" Width="120" SelectionMode="Multiple"/>
+        <Button x:Name="btnAdd" Content="&gt;" HorizontalAlignment="Left" Margin="171,291,0,0" VerticalAlignment="Top" Width="36" Click="btnAdd_Click"/>
+        <Button x:Name="btnDelete" Content="&lt;" HorizontalAlignment="Left" Margin="171,318,0,0" VerticalAlignment="Top" Width="36" RenderTransformOrigin="0.619,2.182" Click="btnDelete_Click"/>
+        <Button x:Name="btnAddAll" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="171,264,0,0" VerticalAlignment="Top" Width="36" Click="btnAddAll_Click"/>
+        <Button x:Name="btnDeleteAll" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="171,345,0,0" VerticalAlignment="Top" Width="36" RenderTransformOrigin="0.619,2.182" Click="btnDeleteAll_Click"/>
+        <Label Content="選取縣市" HorizontalAlignment="Left" Margin="45,17,0,0" VerticalAlignment="Top"/>
+        <Label Content="選取測站" HorizontalAlignment="Left" Margin="45,48,0,0" VerticalAlignment="Top"/>
+        <Label Content="選取年份" HorizontalAlignment="Left" Margin="45,75,0,0" VerticalAlignment="Top" Height="25"/>
+        <Label Content="已選測站年分" HorizontalAlignment="Left" Margin="212,75,0,0" VerticalAlignment="Top" Height="25"/>
+        <Button Content="OpenFile" HorizontalAlignment="Left" Margin="352,318,0,0" VerticalAlignment="Top" Width="74" Click="Button_Click"/>
+        <Label Content="by Ecohover&#xD;&#xA;" HorizontalAlignment="Left" Margin="378,379,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
